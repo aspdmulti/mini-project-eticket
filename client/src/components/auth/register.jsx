@@ -56,7 +56,7 @@ function RegisterComponent() {
     initialValues,
     validationSchema: Yup.object().shape({
       email: Yup.string().required().email(),
-      name: Yup.string().required().min(4),
+      name: Yup.string().required().min(3),
       phone_number: Yup.string(),
       gender: Yup.string(),
       referral_number: Yup.string(),

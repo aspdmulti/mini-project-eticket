@@ -4,7 +4,7 @@ import { axiosInstance } from "@/axios/axios";
 import { functionLogin, functionLogout } from "../slices/userSlice";
 import Swal from "sweetalert2";
 
-export const userLogin = ({ email, password }) => {
+export const userLogin = ({ email, password }, router) => {
   return async (dispatch) => {
     try {
       const res = await axiosInstance().get("/users", {
@@ -24,6 +24,7 @@ export const userLogin = ({ email, password }) => {
         });
 
         localStorage.setItem("user", res.data.token);
+        router.back();
       }
       return;
     } catch (err) {

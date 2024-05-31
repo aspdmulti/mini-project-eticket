@@ -7,7 +7,7 @@ import { ReqUser } from "../middlewares/auth-middleware";
 import { genSalt, hash, compare } from "bcrypt";
 import { sign, verify } from "jsonwebtoken";
 import { mailer, transport } from "../lib/nodemailer";
-import mustache, { render } from "mustache";
+import mustache from "mustache";
 import fs from "fs";
 type TUser = {
   email: string;

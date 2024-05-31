@@ -26,5 +26,3 @@ export const mailer = async ({ subject, html, to, text }: mailer) => {
     text: String(text) || "hello ridwan",
   });
 };
-
-// mailer({ subject: "welcome", html: "", to: "test@mal.com", text: "hello" });

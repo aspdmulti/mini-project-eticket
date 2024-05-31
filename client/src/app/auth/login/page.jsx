@@ -2,15 +2,16 @@
 "use client";
 import { userLogin } from "@/redux/middleware/user";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { useDispatch } from "react-redux";
 function Page() {
   const dispatch = useDispatch();
-
+  const router = useRouter();
   const login = () => {
     const email = document.getElementById("email").value;
     const password = document.getElementById("password").value;
 
-    dispatch(userLogin({ email, password }));
+    dispatch(userLogin({ email, password }, router));
   };
 
   return (
